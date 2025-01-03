@@ -3,7 +3,7 @@
 cd /home/ec2-user/nextjs-app
 
 # Install dependencies
-npm install
+npm install -g
 
 # Build the application
 npm run build
