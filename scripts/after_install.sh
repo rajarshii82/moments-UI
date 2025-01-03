@@ -2,6 +2,7 @@
 #!/bin/bash
 cd /home/ec2-user/nextjs-app
 
+npm init
 # Install dependencies
 npm install -g
 
