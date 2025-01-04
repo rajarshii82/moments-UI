@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "NEXT_DISABLE_ESLINT=true node_modules/next/dist/bin/next start -p 3333",
+    "build": "NEXT_DISABLE_ESLINT=true next build",
+    "start": "next start -p 3333",
     "lint": "next lint"
   },
   "dependencies": {
