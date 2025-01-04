@@ -6,21 +6,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm use 20  # or your Node version
 
-# Add swap space for build
-if [ ! -f /swapfile ]; then
-    sudo dd if=/dev/zero of=/swapfile bs=128M count=16
-    sudo chmod 600 /swapfile
-    sudo mkswap /swapfile
-    sudo swapon /swapfile
-fi
-
 # Clean install
 rm -rf node_modules
 rm -rf .next
 npm cache clean --force
 
 # Install dependencies
-npm install --production=false
+npm install 
 
 # Set NODE_ENV to production to skip font downloads
 export NODE_ENV=production
