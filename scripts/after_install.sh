@@ -14,11 +14,8 @@ npm cache clean --force
 # Install dependencies
 npm install 
 
-# Set NODE_ENV to production to skip font downloads
-export NODE_ENV=production
-
 # Build with more memory allocation and skip font optimization
-NODE_OPTIONS="--max_old_space_size=460" npm run build
+npm run build
 if [ $? -ne 0 ]; then
     echo "Build failed. Check the following information:"
     echo "Node version: $(node -v)"
