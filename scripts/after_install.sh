@@ -1,25 +1,24 @@
-
-# scripts/after_install.sh
 #!/bin/bash
 cd /home/ec2-user/nextjs-app
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm use 20  # or your Node version
 
-# Use Node.js 18
-nvm use 20
-
-# Clean install dependencies
+# Clean install
 rm -rf node_modules
 rm -rf .next
 npm cache clean --force
+
+# Install dependencies
 npm install
 
-# Build the application with detailed logging
-echo "Starting build process..."
-npm run build
+# Set NODE_ENV to production to skip font downloads
+export NODE_ENV=production
+
+# Build with more memory allocation and skip font optimization
+NODE_OPTIONS="--max_old_space_size=460" npm run build
 if [ $? -ne 0 ]; then
     echo "Build failed. Check the following information:"
     echo "Node version: $(node -v)"
