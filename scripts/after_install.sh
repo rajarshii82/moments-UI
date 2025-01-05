@@ -15,7 +15,7 @@ rm -rf .next
 npm install 
 
 # Build with more memory allocation and skip font optimization
-npm run build --verbose
+npm run build
 if [ $? -ne 0 ]; then
     echo "Build failed. Check the following information:"
     echo "Node version: $(node -v)"
