@@ -11,4 +11,4 @@ nvm use 20
 
 # Start the application using PM2
 pm2 delete nextjs-app 2>/dev/null || true
-pm2 start npm --name "nextjs-app" -- start
+pm2 start npm --name "nextjs-app" -- start -H 0.0.0.0
