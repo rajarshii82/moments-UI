@@ -8,7 +8,7 @@ nvm use 20  # or your Node version
 
 # Clean install
 #rm -rf node_modules
-#rm -rf .next
+rm -rf .next
 #npm cache clean --force
 
 # Install dependencies
