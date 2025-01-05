@@ -7,15 +7,15 @@ export NVM_DIR="$HOME/.nvm"
 nvm use 20  # or your Node version
 
 # Clean install
-rm -rf node_modules
-rm -rf .next
-npm cache clean --force
+#rm -rf node_modules
+#rm -rf .next
+#npm cache clean --force
 
 # Install dependencies
 npm install 
 
 # Build with more memory allocation and skip font optimization
-npm run build
+npm run build --verbose
 if [ $? -ne 0 ]; then
     echo "Build failed. Check the following information:"
     echo "Node version: $(node -v)"
